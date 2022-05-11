@@ -24,7 +24,6 @@ public class LoginStepDefinitions {
     String wrongEmailError ="E-mail address or password is incorrect. Please check your information and try again.";
 
 
-    // LoginPage içinde ki 'login' methodu ile gerekli mail ve şifre ile sisteme giriş sağlıyoruz.
     @When("user enter valid email {string} and password {string} for sign in")
     public void user_enter_valid_email_with_email_and_password_for_sign_in(String email, String password) {
         globalMail=ConfigurationReader.get(email);
@@ -34,7 +33,6 @@ public class LoginStepDefinitions {
 
     }
 
-    // Modüllere girmedim. Basitçe en azından title kontrolü sağladım.
     @When("page title should be {string}")
     public void page_title_should_be(String string) {
         Assert.assertEquals(Driver.get().getTitle(),ConfigurationReader.get("basePageTitle"));
@@ -121,13 +119,7 @@ public class LoginStepDefinitions {
             default:
                 System.out.println("Value is not recommended for Boundary Value Analysis");
         }
-
-
-
-
-
-
-        }
+    }
 
 
     @Then("user should get password boundary error {string} message if email is not between {int} to {int}")
@@ -150,5 +142,12 @@ public class LoginStepDefinitions {
             default:
                 System.out.println("Value is not recommended for Boundary Value Analysis");
         }
+    }
+
+    @Then("user should get invalid email error message {string}")
+    public void userShouldGetInvalidEmailErrorMessage(String expectedErrorMessage) {
+        BrowserUtils.waitFor(1);
+        Assert.assertEquals(loginPage.emailErrorMessage.getText(),expectedErrorMessage);
+
     }
 }
