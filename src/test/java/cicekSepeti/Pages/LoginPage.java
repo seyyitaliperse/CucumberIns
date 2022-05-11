@@ -41,14 +41,12 @@ public class LoginPage extends BasePage {
         //************** SAYFA GÖRÜNMÜYOR
         BrowserUtils.waitFor(2);
         Driver.get().navigate().refresh();
-
     }
 
     public void invalidLogin(String email, String password){
         emailBox.sendKeys(ConfigurationReader.get(email));
         passwordBox.sendKeys(ConfigurationReader.get(password));
         singInButton.click();
-
 
     }
 

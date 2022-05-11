@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/loginFunctionality.feature",
         glue = "cicekSepeti/StepDefinitions",
         dryRun = false,
-        tags = "@negative",
+        tags = "@boundary",
         publish = true
 )
 

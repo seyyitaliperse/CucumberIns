@@ -21,14 +21,17 @@ public class LoginStepDefinitions {
     LoginPage loginPage = new LoginPage();
     String globalMail;
     String globalPassword;
-
+    String wrongEmailError ="E-mail address or password is incorrect. Please check your information and try again.";
 
 
     // LoginPage içinde ki 'login' methodu ile gerekli mail ve şifre ile sisteme giriş sağlıyoruz.
-    @When("user login with email {string} and password {string}")
-    public void user_login_with_email_and_password(String email, String password) {
+    @When("user enter valid email {string} and password {string} for sign in")
+    public void user_enter_valid_email_with_email_and_password_for_sign_in(String email, String password) {
+        globalMail=ConfigurationReader.get(email);
+        globalPassword=ConfigurationReader.get(password);
         loginPage.login(email,password);
         BrowserUtils.waitFor(2);
+
     }
 
     // Modüllere girmedim. Basitçe en azından title kontrolü sağladım.
@@ -48,11 +51,12 @@ public class LoginStepDefinitions {
     }
 
 
-    @Given("user sing in with invalid email {string} or password {string}")
-    public void user_sing_in_with_invalid_email_or_password(String email,String password) {
-        loginPage.invalidLogin(email,password);
+    @Given("user enter invalid email {string} or password {string} for sign in")
+    public void user_enter_wrong_email_or_password_for_sign_in(String email,String password) {
         globalMail=ConfigurationReader.get(email);
         globalPassword=ConfigurationReader.get(password);
+        loginPage.invalidLogin(email,password);
+
 
     }
 
@@ -68,17 +72,12 @@ public class LoginStepDefinitions {
 
     @Test
     public void test1(){
-        Driver.get().get(ConfigurationReader.get("url"));
-        Driver.get().manage().window().maximize();
-
-
-        loginPage.emailBox.sendKeys(ConfigurationReader.get("valid_email"));
-        loginPage.passwordBox.sendKeys("asdjasjd");
-        loginPage.singInButton.click();
-        BrowserUtils.waitFor(2);
-
-        String a = Driver.get().findElement(By.cssSelector("div.modal-body")).getText();
-        System.out.println(a);
+        String upper=ConfigurationReader.get("email_boundary_upper_101");
+        String middle=ConfigurationReader.get("email_boundary_middle_100");
+        String lower=ConfigurationReader.get("email_boundary_lower_99");
+        System.out.println("upper = " + upper.length());
+        System.out.println("middle = " + middle.length());
+        System.out.println("lower = " + lower.length());
 
     }
 
@@ -86,7 +85,10 @@ public class LoginStepDefinitions {
     public void userNavigateTo(String url) {
         Driver.get().get(ConfigurationReader.get(url));
         Driver.get().manage().window().maximize();
-    }
+
+
+        }
+
 
 
     @Then("user should get blank {string} warning message")
@@ -102,7 +104,51 @@ public class LoginStepDefinitions {
     }
 
 
+    @Then("user should get email boundary error {string} message if email has more than {int} character")
+    public void userShouldGetEmailBoundaryErrorMessageIfEmailHasMoreThanCharacter(String expectedBoundaryErrorMessage, int charLength) {
+        int emailLength=globalMail.length();
+        boolean boundaryCondition;
+        switch (emailLength){
+            case 99:
+            case 100:
+                BrowserUtils.waitFor(2);
+                Assert.assertEquals(Driver.get().findElement(By.cssSelector("div.modal-body")).getText(),wrongEmailError);
+                break;
+            case 101:
+                BrowserUtils.waitFor(2);
+                Assert.assertEquals(loginPage.emailErrorMessage.getText(),expectedBoundaryErrorMessage);
+                break;
+            default:
+                System.out.println("Value is not recommended for Boundary Value Analysis");
+        }
 
 
 
+
+
+
+        }
+
+
+    @Then("user should get password boundary error {string} message if email is not between {int} to {int}")
+    public void userShouldGetPasswordBoundaryErrorMessageIfEmailIsNotBetweenTo(String expectedBoundaryErrorMessage, int minBoundary, int maxBoundary) {
+        int passwordLength=globalPassword.length();
+        boolean boundaryCondition;
+        switch (passwordLength){
+            case 3:
+            case 4:
+            case 19:
+            case 20:
+                BrowserUtils.waitFor(2);
+                Assert.assertEquals(Driver.get().findElement(By.cssSelector("div.modal-body")).getText(),wrongEmailError);
+                break;
+            case 2:
+            case 21:
+                BrowserUtils.waitFor(2);
+                Assert.assertEquals(loginPage.passwordErrorMessage.getText(),expectedBoundaryErrorMessage);
+                break;
+            default:
+                System.out.println("Value is not recommended for Boundary Value Analysis");
+        }
+    }
 }
