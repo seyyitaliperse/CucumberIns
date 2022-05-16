@@ -7,17 +7,11 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    @Before
-    public void setUp(){
-        Driver.get().get(ConfigurationReader.get("url"));
-        Driver.get().manage().window().maximize();
 
-    }
-
-    @After
+//Befor annotation'u farklılık olması adına Background olarak kullandım. Burda ise işlem sonrası için.
+@After
     public void tearDown(){
-        Driver.closeDriver();
-    }
-
+    Driver.closeDriver();
+}
 
 }

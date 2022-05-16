@@ -12,13 +12,13 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"json:target/cucumber.json",
                 "html:target/default-html-reports"},
-        features = "src/test/resources/features/loginFunctionality.feature",
+        features = "src/test/resources/features/",
         glue = "cicekSepeti/StepDefinitions",
         dryRun = false,
-        tags = "@negative",
+        tags = "@apiTest",
         publish = true
 )
 
 // SORU !!!!!
-public class Runner {
+public class RunnerUI {
 }

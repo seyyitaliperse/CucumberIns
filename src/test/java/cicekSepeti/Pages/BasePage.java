@@ -18,18 +18,12 @@ public abstract class BasePage {
     @FindBy(xpath = "//div[contains(@class,'header__top js-window-menu')]//a[contains(@title,'Log Out')][normalize-space()='Log Out']")
     public WebElement logoutButton;
 
-
-
-    //Temiz kodlama için hazır URL
     public void navigateTo(String url){
         Driver.get().get(ConfigurationReader.get(url));
         Driver.get().manage().window().maximize();
     }
 
-    //
-    public void loginMessages(){
 
-    }
 
 
 
