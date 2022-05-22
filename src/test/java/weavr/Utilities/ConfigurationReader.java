@@ -1,4 +1,4 @@
-package cicekSepeti.Utilities;
+package weavr.Utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;

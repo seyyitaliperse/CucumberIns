@@ -1,24 +1,22 @@
-package cicekSepeti.Runner;
+package weavr.Runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-//Burda Runner olarak Cucumber seçimini tanımlıyoruz. Cucumber-junit bağımlılığını kullanıyoruz.
+//We implement our Cucumber runner here.
 @RunWith(Cucumber.class)
 
 
-//Burda Cucumber Runner için gerekli parametreleri tanımlıyoruz.
+//We implement our Cucumber properties in here. We show feature and step definitions adress and other things in here.
 @CucumberOptions(
         plugin = {"json:target/cucumber.json",
                 "html:target/default-html-reports"},
         features = "src/test/resources/features/",
-        glue = "cicekSepeti/StepDefinitions",
+        glue = "weavr/StepDefinitions",
         dryRun = false,
-        tags = "@apiTest",
-        publish = true
+        tags = "@uiTest"
 )
 
-// SORU !!!!!
 public class RunnerUI {
 }

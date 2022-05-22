@@ -1,4 +1,4 @@
-package cicekSepeti.Utilities;
+package weavr.Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

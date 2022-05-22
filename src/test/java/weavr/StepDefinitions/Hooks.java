@@ -1,9 +1,7 @@
-package cicekSepeti.StepDefinitions;
+package weavr.StepDefinitions;
 
-import cicekSepeti.Utilities.ConfigurationReader;
-import cicekSepeti.Utilities.Driver;
+import weavr.Utilities.Driver;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 
 public class Hooks {
 
