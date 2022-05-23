@@ -16,13 +16,10 @@ Feature: Cart Functionality
       |performance_glitch_user |   secret_sauce     |
 
   #Kullanıcı yanlış email veya şifre ile giriş yapamayıp, beklenilen hata mesajını almasını test ettim.
-  @
+  @negative
   Scenario: Unauthorized users should not able to login
     Given user fills the email box as "wrongUsername" and password box as "wrongPassword"
     Then user should get error message as "Epic sadface: Username and password do not match any user in this service"
-
-
-
 
   #I have used Data Table method her for understanding what kind of inputs I enter
   @positive
