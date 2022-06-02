@@ -1,4 +1,4 @@
-package weavr.Utilities;
+package BrandWatch.Utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;

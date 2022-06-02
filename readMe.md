@@ -1,28 +1,27 @@
+#-----------------------------------------------------------FEEDBACK ---------------------------------------------------------
+- Firstly I have used Cucumber BDD framework which support UI, API and SQL tests and I implement some UI and API tests.   
+- Secondly, from the features files directly you can use it as dynamic but as a requests I didn't do dynamic for understanding better from your side. 
+And I added some prints for tracking on the console.
+- Thirdly, I have finished immediately because I triggered my notice period and coming days I need to teach our structure to the new QA friends.
+- Finally, I want to say that in my current company we are using Cucumber Framework more and more dynamic but it is depends on company, so about dynamic coding I need to get Onboarding Process
+and please note that I have only 2 years experience.
 
 #-----------------------------------------------------------UI PART ---------------------------------------------------------
-#Bascally I write my test scenarios in "Resource/features/frontEndAPI" and I write my scenario codes in /StepDefinitions/FrontEndStepDefinitions and 
-#I assign my web elements and methods in LocatorsPage.
-I create different packages for dynamic coding, using of OOP effectively.
+#You can see on "src/test/java/BrandWatch" address there are 4 packages created with OOP concept.
 - Pages: In this package I implement my locators and methods. Normally with Page Object Model I should create separate classes. But I didn't for this project.
 - Runner: In this package there is runner classes for trigger our framework for both UI and API part by adress our features and step definitions.
-- Features: Contains our scenarios(features). 
 - StepDefinitions: Contains our codes for features. In this part also we should use POM structure managing framework easily.
 - Utilities: Contains reusable implementations for clean and less cods. 
     Configuration.reader: This parts help us to read our stored data from configuration.properties.
-
-#In features I have used DataTable, Scenario outline for better coding. If I have a time I could do it more and more dynamic. But currently I am working -
-# -and for more dynamic properly I have to know company culture. At least you can understand my strategy.
+#You can find below the project configuration.properties and on "src/test/BrandWatch/resources" we have our feature files.
+- Features: Contains our scenarios(features).
+- configuration.properties: Contains our resuable datas.
 
 #-----------------------------------------------------------API PART ---------------------------------------------------------
-- In API part I didn't go dynamic coding deeply. Maybe it could be hard for understanding of implementations. 
-- I didn't do a lot scenario like basic verification things.Because I am currently working and because of I leave I just support some new team members for onboarding process.
-- Basically I write my scenarios in "BackEndAPI" feature file and I write my codes in StepDefinitions/ApiStepDefinitions.
-
-#I send "POST" request dynamically, I verify that response exist with "GET" request and I send "DELETE" request for verifying that body data not exist anymore.
-
-#I could do it by using POSTMAN testscript or with Karate framework. I will send one basic sample about that, from my another task. 
+- In feature files
+- Basically I wrote my scenarios in "BackEndAPI", I wrote my codes in ApiStepDefinitions class and I trigger my features from RunnerAPI.
+- I didn't do separate Scenarios for https methods because I already implement on one scenario as dynamic. For dynamic coding I define some global variables for passing variables.
 
 
-##-----------------------------------------------------------JUNIT FRAMEWORK ---------------------------------------------------------
-- I didn't use JUNIT because I could not explain myself on it. For JUNIT i need some little onboarding progress actually for understand of your strategy. 
-- I hope everything will be okay. If you want me to test more things, I can add some new scenarios. 
+
+

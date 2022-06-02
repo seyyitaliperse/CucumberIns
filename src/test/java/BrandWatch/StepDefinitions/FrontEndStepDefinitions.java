@@ -1,10 +1,11 @@
-package weavr.StepDefinitions;
+package BrandWatch.StepDefinitions;
 
 import io.cucumber.datatable.DataTable;
-import weavr.Pages.LocatorsPage;
-import weavr.Utilities.BrowserUtils;
-import weavr.Utilities.ConfigurationReader;
-import weavr.Utilities.Driver;
+import org.testng.annotations.Test;
+import BrandWatch.Pages.LocatorsPage;
+import BrandWatch.Utilities.BrowserUtils;
+import BrandWatch.Utilities.ConfigurationReader;
+import BrandWatch.Utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
@@ -80,8 +81,10 @@ public class FrontEndStepDefinitions {
         String actualMessage = locatorsPage.completedOrderMessage.getText();
         Assert.assertEquals(actualMessage,expectedMessage);
     }
+    @Test
+    public void test1(){
+        Driver.get().get("https://www.inventanalytics.com/contact-us/");
 
-
-
+    }
 }
 

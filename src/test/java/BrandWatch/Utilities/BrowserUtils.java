@@ -1,4 +1,4 @@
-package weavr.Utilities;
+package BrandWatch.Utilities;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;

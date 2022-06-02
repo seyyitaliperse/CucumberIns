@@ -1,6 +1,6 @@
-package weavr.Pages;
+package BrandWatch.Pages;
 
-import weavr.Utilities.Driver;
+import BrandWatch.Utilities.Driver;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
