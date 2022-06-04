@@ -52,7 +52,8 @@ public class FrontEndStepDefinitions {
         Assert.assertEquals(actualErrorMessage,expectedErrorMessage);
     }
 
-    //Actually i could do some dynamic code, I could use string manipulation for web element with switch case. But hope explanation is enough for now.
+    /**Actually i could do some dynamic code, I could use string manipulation for web element with switch case. But hope explanation is enough for now.
+     */
     @Given("user add some items to the chart")
     public void user_add_some_items_to_the_chart() {
         locatorsPage.backPackProducts.click();
