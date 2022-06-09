@@ -1,4 +1,4 @@
-package BrandWatch.Utilities;
+package Trello_Gittigidiyor.Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

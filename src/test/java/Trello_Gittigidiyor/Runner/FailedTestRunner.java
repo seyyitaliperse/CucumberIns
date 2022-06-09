@@ -1,4 +1,4 @@
-package BrandWatch.Runner;
+package Trello_Gittigidiyor.Runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -9,13 +9,11 @@ import org.junit.runner.RunWith;
 
 //We implement our Cucumber properties in here. We show feature and step definitions adress and other things in here.
 @CucumberOptions(
-
-        features = "src/test/resources/features/",
-        glue = "BrandWatch/StepDefinitions",
-        dryRun = false,
-        tags = "@apiTest",
-        strict = true
+        plugin = {"html:target/failed-html-report"},
+        features = "@target/rerun.txt",
+        glue = "BrandWatch/StepDefinitions"
 )
 
-public class RunnerAPI {
+public class FailedTestRunner {
 }
+

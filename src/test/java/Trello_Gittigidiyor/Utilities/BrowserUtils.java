@@ -1,4 +1,4 @@
-package BrandWatch.Utilities;
+package Trello_Gittigidiyor.Utilities;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;

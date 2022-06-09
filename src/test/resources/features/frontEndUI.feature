@@ -1,34 +1,20 @@
-Feature: Cart Functionality
+Feature: Basket Functionality
 
   Background:
-    Given user navigates to the login page
+    Given user navigates to the main page
 
-  #I tested login function with valid credentials
   @positive
-  Scenario Outline: Authorized users able to login
-    Given user login with username as "<username>" and password as "<password>"
-    And page title should be "Swag Labs"
-    Then user log out successfully
-    Examples:
-      |username                |password            |
-      |standard_user           |   secret_sauce     |
-      |problem_user            |   secret_sauce     |
-      |performance_glitch_user |   secret_sauce     |
+  #Following the task description directly
+  Scenario: User able to use basket functionality correctly
+    Given user able to search "bilgisayar" on search box
+    And user able to move to "2" page
+    Then the page number should be correct
+    And user able to click on a product
+    Then user able to add product to basket
+    And verifying that page product price and basket price should be same
+    Then user able to improve amount of product as "2"
+    And user able to delete product from basket
+    Then verifying that basket has empty message as "Sepetinizde ürün bulunmamaktadır."
 
-  #I tried enter with wrong credentials and get error message
-  @negative
-  Scenario: Unauthorized users should not able to login
-    Given user fills the email box as "wrongUsername" and password box as "wrongPassword"
-    Then user should get error message as "Epic sadface: Username and password do not match any user in this service"
 
-  #I have used Data Table method for understanding easily what kind of inputs I enter
-  @positive
-  Scenario: Authorized users able to buy item
-  Given user login with username as "standard_user" and password as "secret_sauce"
-  And user add some items to the chart
-  Then user should able to go for check out
-  And user fills out necessary inputs
-  |First Name|Last Name|Zip Code|
-  |Seyyit Ali|Perse    |48000   |
-  Then user complete order and get successful message as "THANK YOU FOR YOUR ORDER"
-  And user log out successfully
+

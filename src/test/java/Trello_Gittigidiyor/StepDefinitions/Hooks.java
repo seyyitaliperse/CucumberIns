@@ -1,9 +1,9 @@
-package BrandWatch.StepDefinitions;
+package Trello_Gittigidiyor.StepDefinitions;
 
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import BrandWatch.Utilities.Driver;
+import Trello_Gittigidiyor.Utilities.Driver;
 import io.cucumber.java.After;
 
 public class Hooks {
