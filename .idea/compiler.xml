@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="BrandWatchCucumber_Seyyit" />
         <module name="WeavrCucumber" />
+        <module name="Cucumber_UI_API_Sample" />
         <module name="GittigidiyorCucumber_Seyyit" />
         <module name="CicekSepeti" />
       </profile>

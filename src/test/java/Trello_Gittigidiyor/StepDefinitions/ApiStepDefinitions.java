@@ -69,12 +69,6 @@ public class ApiStepDefinitions {
         /**Post method giving ID automatically, so I can use this ID in the next steps for verification and manipulation. I pass id parameter to the next steps.
          */
         globalBoardID = postResponse.path("id").toString();
-
-        /**OUTPUT FOR UNDERSTANDING STEPS
-         */
-        System.out.println("--------- CREATING BOARD ----------");
-        System.out.println("Status Code: " + postResponse.statusCode());
-        postResponse.prettyPrint();
         BrowserUtils.waitFor(10);
 
     }
@@ -142,6 +136,7 @@ public class ApiStepDefinitions {
                 .given().accept(ContentType.JSON)
                 .and().contentType(ContentType.JSON)
                 .and().queryParams(cardMap)
+                .and().queryParam("locationName","Welcome to Sample Card")
                 .and().queryParams(globalAuthorizationMap)
                 .post();
 

@@ -26,6 +26,10 @@ and please note that I have only 2 years experience.
 - REPORTS: In cucumber reports "target/cucumber-html-reports/overview-features" adress you can open with chrome and you can see reports in details.
 - FAILED TEST RUNNER: - After trigger "RunnerUI" failed tests will be strored in "target/rerun.txt" adress, once you fix your steps you can just trigger "FailedTestRunner" so I will trigger only failed tests.
 
+#-----------------------------------------------------------Sample Mail&Password---------------------------------------------------------
+mail: sample.seyyitaliperse@gmail.com  
+password: sampleUser2000
+
 
 
 
