@@ -1,9 +1,0 @@
-2022-06-12 19:12:38 INFO  Log4j:20 - Navigates to web page
-2022-06-12 19:15:08 INFO  Log4j:20 - Navigates to web page
-2022-06-12 19:27:45 INFO  Log4j:20 - Navigates to web page successfully
-2022-06-12 19:27:55 INFO  Log4j:20 - Searched for bilgisayar
-2022-06-12 19:28:12 INFO  Log4j:20 - Product data is saved.
-2022-06-12 19:28:13 INFO  Log4j:20 - Product added to basket.
-2022-06-12 19:28:20 INFO  Log4j:20 - Navigated to basket page.
-2022-06-12 19:28:22 INFO  Log4j:20 - Product amount improved as 2.
-2022-06-12 19:28:22 INFO  Log4j:20 - Product deleted from basket.
