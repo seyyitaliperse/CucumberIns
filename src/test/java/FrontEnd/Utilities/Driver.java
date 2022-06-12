@@ -1,4 +1,4 @@
-package Trello_Gittigidiyor.Utilities;
+package FrontEnd.Utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

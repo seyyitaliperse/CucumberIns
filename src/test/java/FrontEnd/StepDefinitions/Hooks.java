@@ -1,9 +1,9 @@
-package Trello_Gittigidiyor.StepDefinitions;
+package FrontEnd.StepDefinitions;
 
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import Trello_Gittigidiyor.Utilities.Driver;
+import FrontEnd.Utilities.Driver;
 import io.cucumber.java.After;
 
 public class Hooks {

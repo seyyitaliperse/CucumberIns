@@ -1,4 +1,4 @@
-package Trello_Gittigidiyor.Utilities;
+package FrontEnd.Utilities;
 
 import java.io.FileInputStream;
 import java.util.Properties;

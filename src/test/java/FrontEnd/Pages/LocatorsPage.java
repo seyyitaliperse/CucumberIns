@@ -1,6 +1,6 @@
-package Trello_Gittigidiyor.Pages;
+package FrontEnd.Pages;
 
-import Trello_Gittigidiyor.Utilities.Driver;
+import FrontEnd.Utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

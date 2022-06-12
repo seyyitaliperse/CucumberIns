@@ -1,7 +1,7 @@
-package Trello_Gittigidiyor.StepDefinitions;
+package API.StepDefinitions;
 
-import Trello_Gittigidiyor.Pages.BasePage;
-import Trello_Gittigidiyor.Utilities.BrowserUtils;
+import FrontEnd.Pages.BasePage;
+import FrontEnd.Utilities.BrowserUtils;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -9,7 +9,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import Trello_Gittigidiyor.Utilities.apiMethods_Seyyit;
+import API.Utilities.apiMethods_Seyyit;
 
 import java.util.HashMap;
 import java.util.List;

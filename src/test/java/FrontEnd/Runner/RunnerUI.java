@@ -1,4 +1,4 @@
-package Trello_Gittigidiyor.Runner;
+package FrontEnd.Runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -14,9 +14,10 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports",
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features/",
-        glue = "Trello_Gittigidiyor/StepDefinitions",
+        glue = "FrontEnd/StepDefinitions",
         dryRun = false,
-        tags = "@negative or @positive"
+        tags = "@negative or @positive",
+        strict = true
 )
 
 public class RunnerUI {

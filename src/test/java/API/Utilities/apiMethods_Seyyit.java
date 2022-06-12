@@ -1,4 +1,6 @@
-package Trello_Gittigidiyor.Utilities;
+package API.Utilities;
+
+import FrontEnd.Utilities.ConfigurationReader;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class apiMethods_Seyyit {
     }
     public static Map<String,Object> authorizationMap(){
         Map<String,Object> bodyMap = new HashMap<>();
-        bodyMap.put("token",ConfigurationReader.get("token"));
+        bodyMap.put("token", ConfigurationReader.get("token"));
         bodyMap.put("key",ConfigurationReader.get("key"));
 
 
