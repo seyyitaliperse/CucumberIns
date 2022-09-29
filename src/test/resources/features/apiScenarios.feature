@@ -29,7 +29,6 @@ Feature: Verifying some http method results, status codes and
     Given Updating random card while sending put request to related API as "https://api.trello.com" with end point as "/1/cards"
       |Name         |
       |Updated_Card |
-
     #DELETE CARD
     Given Deleting cards from the board while sending delete request to related API as "https://api.trello.com" with end point as "/1/cards"
     Given Deleting board from while sending delete request to related API as "https://api.trello.com" with end point as "/1/boards"

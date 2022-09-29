@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BrandWatchCucumber_Seyyit" />
         <module name="WeavrCucumber" />
         <module name="Cucumber_UI_API_Sample" />
-        <module name="GittigidiyorCucumber_Seyyit" />
         <module name="CicekSepeti" />
+        <module name="BrandWatchCucumber_Seyyit" />
+        <module name="ObssProject" />
+        <module name="CucumberIns" />
+        <module name="GittigidiyorCucumber_Seyyit" />
       </profile>
     </annotationProcessing>
   </component>

@@ -2,6 +2,7 @@ package API.StepDefinitions;
 
 import FrontEnd.Pages.BasePage;
 import FrontEnd.Utilities.BrowserUtils;
+import FrontEnd.Utilities.PersonalUtils;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -17,11 +18,13 @@ import java.util.Map;
 
 public class ApiStepDefinitions {
 
-    public String globalURI;
+    private Map<String,Object> mapGlobal = new HashMap<>();
+
     public Response globalResponse;
     public Response globalBoardResponse;
-    public String globalBoardID;
+
     public Response globalListResponse;
+    public String globalURI;
     public String globalListID;
     public List<List<String>> globalList;
     public Map<String, Object> globalAuthorizationMap = apiMethods_Seyyit.authorizationMap();
@@ -68,8 +71,8 @@ public class ApiStepDefinitions {
 
         /**Post method giving ID automatically, so I can use this ID in the next steps for verification and manipulation. I pass id parameter to the next steps.
          */
-        globalBoardID = postResponse.path("id").toString();
-        BrowserUtils.waitFor(10);
+        mapGlobal.put("boardID",postResponse.path("id").toString());
+        BrowserUtils.waitFor(5);
 
     }
 
@@ -87,7 +90,7 @@ public class ApiStepDefinitions {
         RestAssured.baseURI = globalURI;
         Response getResponse = RestAssured
                 .given().accept(ContentType.JSON)
-                .and().pathParam("id", globalBoardID)
+                .and().pathParam("id", mapGlobal.get("boardID"))
                 .and().queryParams(globalAuthorizationMap)
                 .when().get("/{id}");
 
@@ -101,7 +104,7 @@ public class ApiStepDefinitions {
         List<List<String>> bodyList = dataTable.cells();
         String name = bodyList.get(1).get(0);
 
-        Map<String, Object> listMap = apiMethods_Seyyit.listMap(name, globalBoardID);
+        Map<String, Object> listMap = apiMethods_Seyyit.listMap(name, mapGlobal.get("boardID").toString());
 
 
         globalURI = apiURI + endPoint;
@@ -141,9 +144,6 @@ public class ApiStepDefinitions {
                 .post();
 
         cardIdMap.put(name,postResponse.path("id"));
-
-
-
     }
 
     @Given("Updating random card while sending put request to related API as {string} with end point as {string}")
@@ -152,7 +152,7 @@ public class ApiStepDefinitions {
 
         /** I create one random number method in our abstract class "BasePage" and It will work dynamically depends how many cards we created.
          */
-        String cardNum = String.valueOf(BasePage.randomNum(1,cardIdMap.size()));
+        String cardNum = String.valueOf(PersonalUtils.randomNum(1,cardIdMap.size()));
         String randomCard = "Card_"+cardNum;
         List<List<String>> bodyList =dataTable.cells();
         String name = bodyList.get(1).get(0);
@@ -191,7 +191,7 @@ public class ApiStepDefinitions {
         RestAssured.baseURI = globalURI;
         Response deleteResponse = RestAssured
                 .given().accept(ContentType.JSON)
-                .pathParam("id",globalBoardID)
+                .pathParam("id",mapGlobal.get("boardID").toString())
                 .and().queryParams(globalAuthorizationMap)
                 .delete("/{id}");
 
