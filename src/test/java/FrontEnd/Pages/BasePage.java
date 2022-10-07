@@ -29,5 +29,9 @@ public abstract class BasePage {
         element.click();
     }
 
+    protected String getCurrentUrl(){
+        return Driver.get().getCurrentUrl();
+    }
+
     public BasePage() {PageFactory.initElements(Driver.get(), this);  }
 }

@@ -1,4 +1,3 @@
-@testing
 Feature: Sending request message to Obss Company
 
   Background: User navigates to obss website

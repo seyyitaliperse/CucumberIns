@@ -21,7 +21,7 @@ public class SendRequestMessageSteps {
 
     @Given("user on the obss base page")
     public void user_on_the_obss_base_page() {
-        Driver.get().get(ConfigurationReader.get("url"));
+        Driver.get().get(ConfigurationReader.get("urlObss"));
 
     }
 

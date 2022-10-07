@@ -30,9 +30,8 @@ You can find below the project configuration.properties and on "src/test/resourc
 1. Navigate and login trello website: https://trello.com/
 2. Mail: sample.seyyitaliperse@gmail.com  
 3. Password: sampleUser2000
-#Get "KEY" and "TOKEN" for Configuration.properties
-4. https://trello.com/app-key 
-5. After you login to the trello page. Click on link then get save your "KEY" in the configuration.properties then also there is "TOKEN" you can get after key second link. "Belirteç"
+#Get "KEY" and "TOKEN" for Configuration.properties (Already implemented)
+4. https://trello.com/app-key
 
 
 
